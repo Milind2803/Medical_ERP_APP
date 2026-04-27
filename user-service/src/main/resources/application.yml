@@ -8,7 +8,7 @@ spring:
     name: user-service
   data:
     mongodb:
-      uri: ${MONGODB_URI:mongodb://localhost:27017/users_db}
+      uri: ${MONGODB_URI:mongodb+srv://linux:redhat@cluster0.32n20bl.mongodb.net/users_db?retryWrites=true&w=majority&appName=Cluster0}
       database: users_db
   jackson:
     default-property-inclusion: non_null
@@ -48,4 +48,4 @@ logging:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 
 cors:
-  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:*}
