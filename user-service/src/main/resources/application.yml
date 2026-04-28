@@ -49,3 +49,15 @@ logging:
 
 cors:
   allowed-origins: ${CORS_ALLOWED_ORIGINS:*}
+
+# ── Seed / Bootstrap ─────────────────────────────────────────────────────────
+# On first startup, if no ADMIN exists, these values are used to create
+# a default organization and admin user automatically.
+# Override via environment variables before deploying to production.
+seed:
+  admin:
+    email: ${SEED_ADMIN_EMAIL:admin@medicalerp.com}
+    password: ${SEED_ADMIN_PASSWORD:Admin@123456}
+  org:
+    name: ${SEED_ORG_NAME:MedERP HQ}
+    registration-number: ${SEED_ORG_REG_NUMBER:HQ-0001}
